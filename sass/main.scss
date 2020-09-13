@@ -17,6 +17,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: $family;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	color: $ternary-color;
 	& > * {
