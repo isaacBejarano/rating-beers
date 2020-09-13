@@ -1,0 +1,73 @@
+// global
+$primary-color: gold;
+$secondary-color: white;
+$ternary-color: #202020;
+$dynamic-color: lighten($primary-color, 20%);
+$family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+$breakpoint-md: 768px;
+$pic: "../assets/beer-bubbles.jpg";
+
+// style
+body {
+	margin: 0;
+	min-height: 1500px;
+	background-image: url($pic);
+	background-color: $primary-color; // fallback bg
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: $family;
+	user-select: none;
+	color: $ternary-color;
+	& > * {
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+	hgroup {
+		padding: 2rem;
+		background-color: $primary-color;
+		box-shadow: inset 0px 0px 10px 5px darken($primary-color, 10%);
+		h1,
+		h2,
+		h3 {
+			margin: 0.5rem 0;
+		}
+		h3 {
+			margin-top: 1rem;
+			color: lighten($ternary-color, 25%);
+			font-size: 1.7rem;
+		}
+	}
+	main {
+		margin: 10rem auto 0;
+		padding: 3rem;
+		max-width: $breakpoint-md;
+		background: linear-gradient($secondary-color, transparent, transparent);
+		box-shadow: 0px 3px 5px 0px $ternary-color;
+		border-radius: 110px;
+		ul {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+			@media (min-width: 576px) {
+				justify-content: space-evenly;
+			}
+			li {
+				i {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+// dynamic - JS
+.locked {
+	color: $dynamic-color;
+	text-shadow: 0px 5px 5px $ternary-color;
+}
+.hover {
+	color: $dynamic-color;
+	transition: all 0.3s ease-out;
+}
